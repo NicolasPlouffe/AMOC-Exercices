@@ -18,6 +18,11 @@ Flasher::Flasher(const Flasher &p_aCopier) : m_pinDEL(p_aCopier,m_pinDEL), m_dur
     Serial.println("Flasher::Flasher(const Flasher &) (0x" + String((uint16_t)this, HEX) +")");
 }
 
+Flasher::~Flasher(){
+    ;
+}
+
+
 // Operateur d'affectation
 Flasher &Flasher::operator=(const Flasher &p_source)
 {
