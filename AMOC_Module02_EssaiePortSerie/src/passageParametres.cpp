@@ -16,7 +16,8 @@ void passageParametres2(int*& p_r1, int** p_pp1){
     Serial.println(
         " La valeure de int &p_r1(int * 0x" 
         + String((uint16_t)(&p_r1), HEX) 
-        + ") = " + String((uintptr_t)p_r1, HEX)
+        + ") = " 
+        + String((uintptr_t)p_r1, HEX)
     );
     
     // modifie le pointeur **p_p1 pointé en créant un nouvel entier sur le tas
@@ -32,9 +33,26 @@ void passageParametres2(int*& p_r1, int** p_pp1){
 void passageDeParametresCopie(Flasher p_flasher) {
     Serial.println(
         " Adresse de la copie : 0x" 
-        + String((uintptr_t)&p_flasher, HEX) 
+        + String((uint16_t)&p_flasher, HEX) 
         + " | Valeur : " 
-        + String(p_flasher) // Adaptez selon le type Flasher
+        + String(p_flasher)
     );
 }
 
+void passageDeParametresReference(Flasher& p_flasher){
+    Serial.println(
+        "Adresse dans la fonction : 0x" 
+        + String((uint16_t)&p_flasher, HEX) 
+        + ") = " 
+        + String(&p_flasher)
+    );
+}
+
+void passageDeParametresPointeur(Flasher* p_flasher){
+    Serial.println(
+        "Adresse passée en paramètre : 0x" 
+        + String((uint16_t)*p_flasher, HEX)  
+        + ") = " 
+        + String(*p_flasher)
+    );
+}
