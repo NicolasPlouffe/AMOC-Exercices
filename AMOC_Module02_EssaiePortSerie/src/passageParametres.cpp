@@ -1,5 +1,5 @@
 #include <Arduino.h>
-
+#include <Flasher.h>
 #include "passageParametres.h"
 
 
@@ -35,7 +35,6 @@ void passageDeParametresCopie(Flasher p_flasher) {
         " Adresse de la copie : 0x" 
         + String((uint16_t)&p_flasher, HEX) 
         + " | Valeur : " 
-        + String(p_flasher)
     );
 }
 
@@ -44,15 +43,12 @@ void passageDeParametresReference(Flasher& p_flasher){
         "Adresse dans la fonction : 0x" 
         + String((uint16_t)&p_flasher, HEX) 
         + ") = " 
-        + String(&p_flasher)
     );
 }
 
 void passageDeParametresPointeur(Flasher* p_flasher){
     Serial.println(
         "Adresse passée en paramètre : 0x" 
-        + String((uint16_t)*p_flasher, HEX)  
-        + ") = " 
-        + String(*p_flasher)
+        + String((uintptr_t)p_flasher, HEX)  
     );
 }

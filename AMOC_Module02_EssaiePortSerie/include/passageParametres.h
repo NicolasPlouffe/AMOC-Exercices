@@ -6,4 +6,4 @@ void passageDeParametresCopie(Flasher p_flasher);
 
 void passageDeParametresReference(Flasher& p_flasher);
 
-void passageDeParametresPointeur(Flasher* p_lasher)
+void passageDeParametresPointeur(Flasher* p_flasher);
