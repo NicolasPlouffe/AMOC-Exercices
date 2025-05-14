@@ -1,12 +1,13 @@
 #pragma once
-#include "DetecteurDistance.h"
+#include "include/DetecteurDistance.h"
+#include "include/AlerteDistance.h"
 
 class Program {
 private:
-    DetecteurDistance& m_detecteurDistance; // Référence obligatoire (classe abstraite)
+    DetecteurDistance* m_detecteurDistance; // Référence obligatoire (classe abstraite)
     
 public:
-    Program(DetecteurDistance& detecteur); 
+    Program(DetecteurDistance* detecteur); 
     ~Program() = default; 
     void Loop();
 };

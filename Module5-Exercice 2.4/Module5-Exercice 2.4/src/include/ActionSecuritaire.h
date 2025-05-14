@@ -9,7 +9,7 @@ DEL* m_jaune;
 DEL* m_verte;
 
 public:
-    ActionSecuritaire(/* args */);
+    ActionSecuritaire(DEL* delRouge, DEL* delJaune, DEL* delVerte);
     ~ActionSecuritaire() override;
     void Executer() override;  // Override explicite
 };

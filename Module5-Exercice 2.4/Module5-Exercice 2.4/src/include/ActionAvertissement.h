@@ -9,7 +9,8 @@ class ActionAvertissement : public Action
         DEL* m_jaune;
         DEL* m_verte;
 public:
-    ActionAvertissement(/* args */);
+
+    ActionAvertissement(DEL* delRouge, DEL* delJaune, DEL* delVerte);
     ~ActionAvertissement()override;
     void Executer() override;  // Override explicite
 };
