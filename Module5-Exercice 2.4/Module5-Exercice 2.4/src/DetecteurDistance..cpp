@@ -1,11 +1,9 @@
-#include <Arduino.h>
-#include <include/DetecteurDistance.h>
+#include "include/DetecteurDistance.h"
 
-DetecteurDistance::DetecteurDistance(){
-    ;
+DetecteurDistance::DetecteurDistance() {
 }
 
-DetecteurDistance::~DetecteurDistance(){
-    ;
+double DetecteurDistance::ObtenirDistanceMetres() const {
+    // Actual sensor reading implementation
+    return 0.0; 
 }
-

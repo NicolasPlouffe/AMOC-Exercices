@@ -16,11 +16,13 @@ void DEL::Eteindre() {
 }
 
 void DEL::Tick() {
-    // Implémentation de la logique de clignotement ici
-    // Exemple : basculement d'état toutes les secondes
+
     static unsigned long dernierChangement = 0;
-    if (millis() - dernierChangement >= 1000) {
-        m_etat ? Eteindre() : Allumer();
-        dernierChangement = millis();
-    }
+   if( millis() - dernierChangement >= m_dureeTick){
+    Allumer();
+    dernierChangement = millis();
+   }
+   if(millis() - dernierChangement >= m_dureeAllumee){
+    Eteindre();
+   }
 }

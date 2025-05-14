@@ -4,9 +4,9 @@
 
 class ActionAlerte : public Action {  // Héritage public
     private:
-DEL m_rouge;
-DEL m_jaune;
-DEL m_verte;
+DEL* m_rouge;
+DEL* m_jaune;
+DEL* m_verte;
 
 public:
     ActionAlerte();

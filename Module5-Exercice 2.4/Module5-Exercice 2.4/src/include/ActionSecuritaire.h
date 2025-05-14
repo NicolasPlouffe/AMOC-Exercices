@@ -4,9 +4,9 @@
 class ActionSecuritaire : public Action
 {
 private:
-    DEL m_rouge;
-    DEL m_jaune;
-    DEL m_verte;
+DEL* m_rouge;
+DEL* m_jaune;
+DEL* m_verte;
 
 public:
     ActionSecuritaire(/* args */);

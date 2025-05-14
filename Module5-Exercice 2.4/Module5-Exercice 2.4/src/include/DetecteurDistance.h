@@ -1,8 +1,8 @@
-// DetecteurDistance.h
 #pragma once
 
 class DetecteurDistance {
 public:
-    virtual ~DetecteurDistance() = default;
-    virtual double ObtenirDistanceMetres() const = 0;
+    DetecteurDistance();  // Constructor declaration
+    virtual ~DetecteurDistance() = default;  // Defaulted virtual destructor
+    virtual double ObtenirDistanceMetres() const = 0;  // Pure virtual method
 };
