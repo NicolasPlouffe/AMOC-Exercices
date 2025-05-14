@@ -1,10 +1,8 @@
+// Tache.h
 #pragma once
 
-class Tache
-{
+class Tache {
 public:
-    virtual ~Tache();
-    virtual void Tick();
+    virtual ~Tache() = default;
+    virtual void Tick() = 0; // Méthode purement virtuelle
 };
-
-
