@@ -1,6 +1,14 @@
 #include <Arduino.h>
 #include "include/DEL.h"
 #include "include/Program.h"
+#include "include/Action.h"
+#include "include/ActionAlerte.h"
+#include "include/ActionAvertissement.h"
+#include "include/ActionSecuritaire.h"
+#include "include/AlerteDistance.h"
+
+
+
 
 const uint8_t pinRouge;
 const uint8_t pinJaune;
@@ -9,7 +17,7 @@ const uint8_t pinVerte;
 
 // Initialisation obligatoire via liste d'initialisation
 Program::Program(DetecteurDistance* detecteur)
-    : m_detecteurDistance(detecteur) // Initialisation de la référence
+    : m_alerteDistance(nullptr) 
 {
 
     Serial.begin(9600);
@@ -18,13 +26,12 @@ Program::Program(DetecteurDistance* detecteur)
     DEL* delJaune = new DEL(pinJaune);
     DEL* delVerte = new DEL(pinVerte);
 
-    // Création des actions avec les DELs appropriées
     Action* actionAlerte = new ActionAlerte(delRouge, delJaune, delVerte);
     Action* actionAvertissement = new ActionAvertissement(delRouge, delJaune, delVerte);
     Action* actionSecuritaire = new ActionSecuritaire(delRouge, delJaune, delVerte);
 
 
-    m_alerteDistance = new AlerteDistance(
+    this->m_alerteDistance = new AlerteDistance(
         m_detecteurDistance,
         1.0,   // Seuil alerte
         2.0,   // Seuil avertissement
@@ -38,9 +45,5 @@ Program::Program(DetecteurDistance* detecteur)
 }
 
 void Program::Loop() {
-    // Logique principale (remplace le loop)
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(500);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(500);
+   this->m_alerteDistance->Tick();
 }

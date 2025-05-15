@@ -20,13 +20,7 @@ public:
         Action* p_actionAvertissement,
         Action* p_actionSecuritaire,
         Action* p_actionAlerte
-    ) : 
-        m_detecteurDistance(p_detecteurDistance),
-        m_distanceAlerte(p_distanceAlerte),
-        m_distanceAvertissement(p_distanceAvertissement),
-        m_actionAvertissement(p_actionAvertissement),
-        m_actionSecuritaire(p_actionSecuritaire),
-        m_actionAlerte(p_actionAlerte) {}
+    );
 
     void Tick() override; 
 };

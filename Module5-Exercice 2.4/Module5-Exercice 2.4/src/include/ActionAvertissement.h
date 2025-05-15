@@ -11,8 +11,7 @@ class ActionAvertissement : public Action
 public:
 
     ActionAvertissement(DEL* delRouge, DEL* delJaune, DEL* delVerte);
-    ~ActionAvertissement()override;
-    void Executer() override;  // Override explicite
+    ~ActionAvertissement();
+    void Executer() override;  
+
 };
-
-

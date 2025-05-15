@@ -10,6 +10,6 @@ DEL* m_verte;
 
 public:
     ActionAlerte(DEL* delRouge, DEL* delJaune, DEL* delVerte);
-    ~ActionAlerte() override;
-    void Executer() override;  // Override explicite
+    ~ActionAlerte();
+    void Executer() override;  
 };

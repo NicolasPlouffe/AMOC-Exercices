@@ -8,6 +8,7 @@ ActionAvertissement::ActionAvertissement(DEL* delRouge, DEL* delJaune, DEL* delV
 }
 
 ActionAvertissement::~ActionAvertissement(){
+    ;
 }
 
 void ActionAvertissement::Executer() {

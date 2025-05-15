@@ -18,7 +18,7 @@ AlerteDistance::AlerteDistance(
 
 void AlerteDistance::Tick()
 {
-    double distance = m_detecteurDistance->ObtenirDistanceMetres(); // . au lieu de ->
+    double distance = m_detecteurDistance->ObtenirDistanceMetres(); 
 
     if (distance < m_distanceAlerte)
     {

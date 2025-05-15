@@ -3,17 +3,15 @@
 #include "include/DetecteurDistanceHCSR04.h" // Implémentation concrète
 
 Program* program = nullptr; // Pointeur global
+static DetecteurDistanceHCSR04* capteur = new DetecteurDistanceHCSR04(5,6); 
 
 void setup() {
-    // Création du détecteur concret
-    static DetecteurDistanceHCSR04 capteur; 
-    
-    // Initialisation du programme
+   
     program = new Program(capteur);
 }
 
 void loop() {
     if(program) {
-        program->Loop(); // Appel polymorphique
+        program->Loop(); 
     }
 }

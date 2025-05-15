@@ -1,11 +1,10 @@
 #include "include/DetecteurDistanceHCSR04.h"
-#include <Arduino.h> // Pour les fonctions Arduino (pinMode, digitalWrite, etc.)
+#include <Arduino.h> 
 
 DetecteurDistanceHCSR04::DetecteurDistanceHCSR04(int p_pinTrigger, int p_pinEcho) 
-    : m_pinTrigger(p_pinTrigger), m_pinEcho(p_pinEcho) 
+    :DetecteurDistanceUltrason (p_pinTrigger, p_pinEcho) 
 {
-    pinMode(m_pinTrigger, OUTPUT);
-    pinMode(m_pinEcho, INPUT);
+    
 }
 
 DetecteurDistanceHCSR04::~DetecteurDistanceHCSR04() {
@@ -13,11 +12,11 @@ DetecteurDistanceHCSR04::~DetecteurDistanceHCSR04() {
 }
 
 double DetecteurDistanceHCSR04::ObtenirDistanceMetres() const {
-    digitalWrite(m_pinTrigger, HIGH);
+    digitalWrite(this->getEchoPin(), HIGH);
     delayMicroseconds(10);
-    digitalWrite(m_pinTrigger, LOW);
+    digitalWrite(this->getEchoPin(), LOW);
 
-    long duree = pulseIn(m_pinEcho, HIGH);
+    long duree = pulseIn(this->getTriggerPin(), HIGH);
     return duree * 0.000343 / 2; 
 }
 
