@@ -1,7 +1,8 @@
-#ifndef ACTION_H
-#define ACTION_H
+#pragma once
+#include "Arduino.h"
 
-void executer();
-
-
-#endif //ACTION_H
+class Action {
+public:
+    ~Action() = default;
+    virtual void Executer() = 0;
+};
