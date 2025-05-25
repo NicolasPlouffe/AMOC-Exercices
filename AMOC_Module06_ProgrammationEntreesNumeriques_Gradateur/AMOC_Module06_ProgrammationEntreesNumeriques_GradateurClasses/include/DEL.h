@@ -1,3 +1,5 @@
+#pragma once
+
 // DEL.h
 #ifndef DEL_H
 #define DEL_H

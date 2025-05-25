@@ -1,5 +1,5 @@
 // Bouton.cpp
-#include "Bouton.h"
+#include "../include/Bouton.h"
 
 Bouton::Bouton(uint8_t p_pin, unsigned long p_delaiAntiRebond)
     : m_pin(p_pin),
@@ -19,12 +19,12 @@ void Bouton::Initialiser() {
 void Bouton::MiseAJour() {
     int etatActuel = digitalRead(m_pin);
     unsigned long tempsActuel = millis();
-    
+
     if (etatActuel != m_dernierEtat) {
         m_derniereDateChangement = tempsActuel;
         m_dernierEtat = etatActuel;
     }
-    
+
     if (tempsActuel - m_derniereDateChangement > m_delaiAntiRebond) {
         if (m_dernierEtatStable == HIGH && etatActuel == LOW) {
             // Bouton appuyé

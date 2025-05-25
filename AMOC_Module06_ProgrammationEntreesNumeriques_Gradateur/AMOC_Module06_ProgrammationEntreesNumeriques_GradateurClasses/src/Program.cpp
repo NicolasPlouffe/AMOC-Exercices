@@ -15,10 +15,10 @@ Program::~Program() {
 
 void Program::initialiser() {
     led->initialiser();
-    bouton->initialiser();
-    bouton->definirActionRelachement(actionBasculerLed);
+    bouton->Initialiser();
+    bouton->SetActionRelachement(actionBasculerLed);
 }
 
 void Program::loop() {
-    bouton->mettreAJour();
+    bouton->MiseAJour();
 }
