@@ -1,50 +1,33 @@
-//
-// Created by nico on 5/15/25.
-//
-#include <Arduino.h>
-#include "../include/DEL.h"
+// DEL.cpp
+#include "DEL.h"
 
-DEL::DEL(uint8_t p_pinDel) {
-    this->m_pinDel = p_pinDel;
-    pinMode(this->m_pinDel, OUTPUT);
-    this->m_intensite = 0;
-    this->m_etat = LOW;
+DEL::DEL(int broche) : broche(broche), etat(false) {}
+
+void DEL::initialiser() {
+    pinMode(broche, OUTPUT);
+    digitalWrite(broche, LOW);
 }
-
-uint8_t DEL::getIntensite() {
-    return this->m_intensite;
-}
-
-uint8_t DEL::getEtat() {
-    return this->m_etat;
-}
-
-void DEL::setIntensite(uint8_t p_intensite) {
-    if (p_intensite > 100) {
-        p_intensite = 100;
-    }
-    this->m_intensite = p_intensite;
-    analogWrite(this->m_pinDel, this->m_intensite);
-}
-
-void DEL::setEtat(uint8_t p_etat) {
-    this->m_etat = p_etat;
-    if (this->m_etat == HIGH) {
-        this->allumer();
-    } else {
-        this->eteindre();
-    }
-}
-
 
 void DEL::allumer() {
-    digitalWrite(this->m_pinDel, HIGH);
-}
-
-void DEL::allumer(float p_ourcentage) {
-    ;
+    etat = true;
+    digitalWrite(broche, HIGH);
 }
 
 void DEL::eteindre() {
-    digitalWrite(this->m_pinDel, LOW);
+    etat = false;
+    digitalWrite(broche, LOW);
+}
+
+void DEL::basculer() {
+    etat = !etat;
+    digitalWrite(broche, etat ? HIGH : LOW);
+}
+
+bool DEL::obtenirEtat() const {
+    return etat;
+}
+
+void DEL::definirEtat(bool nouvelEtat) {
+    etat = nouvelEtat;
+    digitalWrite(broche, etat ? HIGH : LOW);
 }

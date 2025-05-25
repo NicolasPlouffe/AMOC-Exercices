@@ -1,34 +1,54 @@
-//
-// Created by nico on 5/15/25.
-//
-#include <Arduino.h>
+// Bouton.cpp
 #include "Bouton.h"
 
-Bouton::Bouton(uint8_t p_pinBouton, Action *p_actionBoutonPresse) {
-    this->m_pin = p_pinBouton;
-    pinMode(this->m_pin, INPUT);
+Bouton::Bouton(int broche, unsigned long delaiAntiRebond) 
+    : broche(broche), 
+      dernierEtat(HIGH), 
+      dernierEtatStable(HIGH),
+      derniereDateChangement(0),
+      delaiAntiRebond(delaiAntiRebond),
+      actionAppui(nullptr),
+      actionRelachement(nullptr) {}
 
-    this->m_actionBoutonPresse = p_actionBoutonPresse;
+void Bouton::initialiser() {
+    pinMode(broche, INPUT);
+    dernierEtat = digitalRead(broche);
+    dernierEtatStable = dernierEtat;
 }
 
-void Bouton::Tick() {
-    int etatBouton = digitalRead(borneEntree);
-    long dateActuelle = millis();
-    if (etatBouton != dernierEtatBouton) {
-        derniereDateChangement = dateActuelle;
-        dernierEtatBouton = etatBouton;
+void Bouton::mettreAJour() {
+    int etatActuel = digitalRead(broche);
+    unsigned long tempsActuel = millis();
+    
+    if (etatActuel != dernierEtat) {
+        derniereDateChangement = tempsActuel;
+        dernierEtat = etatActuel;
     }
-    if(dateActuelle - derniereDateChangement > delaiMinPression) {
-        if (dernierEtatStableBouton == HIGH && etatBouton == LOW) {
-            // bouton appuyé
-            // Action à réaliser
-        } else if (dernierEtatStableBouton == LOW && etatBouton == HIGH) {
-            // bouton relaché
-            // ... et donc comme click
-            // Action à réaliser
-            dernierEtatLed = !dernierEtatLed;
-            m_actionBoutonPresse->Executer();
+    
+    if (tempsActuel - derniereDateChangement > delaiAntiRebond) {
+        if (dernierEtatStable == HIGH && etatActuel == LOW) {
+            // Bouton appuyé
+            if (actionAppui != nullptr) {
+                actionAppui->Executer();
+            }
+        } else if (dernierEtatStable == LOW && etatActuel == HIGH) {
+            // Bouton relâché
+            if (actionRelachement != nullptr) {
+                actionRelachement->Executer();
+            }
         }
-        dernierEtatStableBouton = etatBouton;
+        dernierEtatStable = etatActuel;
     }
+}
+
+void Bouton::definirActionAppui(Action* action) {
+    actionAppui = action;
+}
+
+void Bouton::definirActionRelachement(Action* action) {
+    actionRelachement = action;
+}
+
+bool Bouton::estAppuye() const {
+    return dernierEtatStable == LOW;
 }

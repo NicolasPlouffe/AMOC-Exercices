@@ -1,32 +1,27 @@
-//
-// Created by nico on 5/15/25.
-//
-#pragma once
-#include "Action.h"
+// Bouton.h
 #ifndef BOUTON_H
 #define BOUTON_H
 
-
+#include <Arduino.h>
+#include "Action.h"
 
 class Bouton {
-public:
-    Bouton(uint8_t p_pinBouton,Action* p_actionBoutonPresse);
-    void Tick();
 private:
-    uint8_t m_pin;
-    Action* m_actionBoutonPresse;
+    int broche;
+    int dernierEtat;
+    int dernierEtatStable;
+    unsigned long derniereDateChangement;
+    unsigned long delaiAntiRebond;
+    Action* actionAppui;
+    Action* actionRelachement;
 
-
-    const int borneEntree = 2;
-    const int borneSortie = 3;
-    int dernierEtatLed = LOW;
-    long derniereDateChangement = 0;
-    int dernierEtatBouton = HIGH;
-    int dernierEtatStableBouton = HIGH;
-    const int delaiMinPression = 25;
-
+public:
+    Bouton(int broche, unsigned long delaiAntiRebond = 25);
+    void initialiser();
+    void mettreAJour();
+    void definirActionAppui(Action* action);
+    void definirActionRelachement(Action* action);
+    bool estAppuye() const;
 };
 
-
-
-#endif //BOUTON_H
+#endif

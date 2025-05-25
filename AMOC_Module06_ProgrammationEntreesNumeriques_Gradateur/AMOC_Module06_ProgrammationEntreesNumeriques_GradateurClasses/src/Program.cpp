@@ -1,22 +1,24 @@
-//
-// Created by nico on 5/15/25.
-//
-#include <Arduino.h>
-#include "../include/Program.h"
-#include "ActionModifierIntensiteDEL.h"
-#include "DEL.h"
+// Program.cpp
+#include "Program.h"
 
 Program::Program() {
-    Serial.begin(9600);
-    int pinDel = 13;
-    int pinBouton = 2;
+    led = new DEL(3);
+    bouton = new Bouton(2, 25);
+    actionBasculerLed = new ActionModifierIntensiteDEL(led);
+}
 
-    DEL* del = new DEL(pinDel);
-    ActionModifierIntensiteDEL* action = new ActionModifierIntensiteDEL(del);
+Program::~Program() {
+    delete led;
+    delete bouton;
+    delete actionBasculerLed;
+}
 
-    this->m_bouton = new Bouton(pinBouton, action);
+void Program::initialiser() {
+    led->initialiser();
+    bouton->initialiser();
+    bouton->definirActionRelachement(actionBasculerLed);
 }
 
 void Program::loop() {
-    this->m_bouton->Tick();
+    bouton->mettreAJour();
 }

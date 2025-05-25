@@ -1,20 +1,22 @@
-//
-// Created by nico on 5/15/25.
-//
-#pragma once
-#include "Bouton.h"
-
+// Program.h
 #ifndef PROGRAM_H
 #define PROGRAM_H
 
+#include "DEL.h"
+#include "Bouton.h"
+#include "ActionModifierIntensiteDEL.h"
 
 class Program {
-    public:
+private:
+    DEL* led;
+    Bouton* bouton;
+    ActionModifierIntensiteDEL* actionBasculerLed;
+
+public:
     Program();
+    ~Program();
+    void initialiser();
     void loop();
-    private:
-    Bouton* m_bouton;
 };
 
-
-#endif //PROGRAM_H
+#endif

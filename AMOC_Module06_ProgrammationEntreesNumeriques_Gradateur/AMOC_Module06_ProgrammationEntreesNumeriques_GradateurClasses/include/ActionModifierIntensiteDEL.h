@@ -1,20 +1,17 @@
-#pragma once
-#include "Action.h"  // Inclure la classe mère
+// ActionModifierIntensiteDEL.h
+#ifndef ACTION_MODIFIER_INTENSITE_DEL_H
+#define ACTION_MODIFIER_INTENSITE_DEL_H
+
+#include "Action.h"
 #include "DEL.h"
 
-class ActionModifierIntensiteDEL : public Action  {
+class ActionModifierIntensiteDEL : public Action {
+private:
+    DEL* del;
 
 public:
-    ActionModifierIntensiteDEL(DEL* p_del);
-    ~ActionModifierIntensiteDEL();
+    ActionModifierIntensiteDEL(DEL* del);
     void Executer() override;
-
-private:
-    DEL* m_del;
-    float m_pourcentageIntensite;
-    float m_pasIntensite;
 };
 
-
-
-
+#endif

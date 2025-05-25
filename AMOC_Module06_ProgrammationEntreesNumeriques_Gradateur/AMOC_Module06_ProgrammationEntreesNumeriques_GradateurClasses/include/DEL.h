@@ -1,33 +1,22 @@
-#pragma once
-
+// DEL.h
 #ifndef DEL_H
 #define DEL_H
-#include <stdint.h>
 
+#include <Arduino.h>
 
 class DEL {
+private:
+    int broche;
+    bool etat;
 
 public:
-    DEL(uint8_t p_pinDel);
-
-    void setIntensite(uint8_t p_intensite);
-    void setEtat(uint8_t p_etat);
-
-    uint8_t getIntensite();
-    uint8_t getEtat();
-
+    DEL(int broche);
+    void initialiser();
     void allumer();
-    void allumer(float p_ourcentage);
     void eteindre();
-
-private:
-    uint8_t m_pinDel;
-
-    uint8_t m_intensite;
-
-    uint8_t m_etat;
+    void basculer();
+    bool obtenirEtat() const;
+    void definirEtat(bool nouvelEtat);
 };
 
-
-
-#endif //DEL_H
+#endif
