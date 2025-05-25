@@ -4,12 +4,12 @@
 #include <Arduino.h>
 #include "../include/ActionModifierIntensiteDEL.h"
 
-ActionModifierIntensiteDEL::ActionModifierIntensiteDEL(DEL *p_del) {
+ActionModifierIntensiteDEL::ActionModifierIntensiteDEL(DEL* p_del) {
     this->m_del = p_del;
 }
 
 void ActionModifierIntensiteDEL::Executer() {
-    if (this->m_del->getEtat == LOW) {
+    if (this->m_del->getEtat() == LOW) {
         this->m_del->setEtat(HIGH);
         this->m_del->allumer();
     } else {
