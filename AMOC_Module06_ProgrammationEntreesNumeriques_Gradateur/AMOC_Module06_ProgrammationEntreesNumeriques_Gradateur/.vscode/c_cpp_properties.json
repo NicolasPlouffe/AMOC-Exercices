@@ -1,0 +1,56 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/AMOC_Module06_ProgrammationEntreesNumeriques_Gradateur/AMOC_Module06_ProgrammationEntreesNumeriques_Gradateur/include",
+                "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/AMOC_Module06_ProgrammationEntreesNumeriques_Gradateur/AMOC_Module06_ProgrammationEntreesNumeriques_Gradateur/src",
+                "/home/nico/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "/home/nico/.platformio/packages/framework-arduino-avr/variants/standard",
+                "/home/nico/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "/home/nico/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "/home/nico/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "/home/nico/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "/home/nico/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/AMOC_Module06_ProgrammationEntreesNumeriques_Gradateur/AMOC_Module06_ProgrammationEntreesNumeriques_Gradateur/include",
+                    "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/AMOC_Module06_ProgrammationEntreesNumeriques_Gradateur/AMOC_Module06_ProgrammationEntreesNumeriques_Gradateur/src",
+                    "/home/nico/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "/home/nico/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "/home/nico/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "/home/nico/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "/home/nico/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "/home/nico/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "/home/nico/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60118",
+                "ARDUINO_AVR_UNO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++11",
+            "compilerPath": "/home/nico/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
