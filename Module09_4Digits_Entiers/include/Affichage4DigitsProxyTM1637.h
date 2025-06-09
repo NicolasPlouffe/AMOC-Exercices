@@ -1,8 +1,17 @@
-//
-// Created by nico on 6/9/25.
-//
+#pragma once
+#include <Arduino.h>
 
-#ifndef AFFICHAGE4DIGITSPROXYTM1637_H
-#define AFFICHAGE4DIGITSPROXYTM1637_H
+#include <TM1637Display.h>
+#include "Affichage4DigitsProxy.h"
 
-#endif //AFFICHAGE4DIGITSPROXYTM1637_H
+
+
+class Affichage4DigitsProxyTM1637 : public Affichage4DigitsProxy{
+private:
+    TM1637Display m_tm1637;
+
+public:
+    Affichage4DigitsProxyTM1637(int p_pinHorloge, int p_pinDonnees);
+};
+
+
