@@ -6,7 +6,7 @@
 class Program {
 
 private:
-Affichage4Digits m_affichage4Digits;
+Affichage4Digits* m_affichage4Digits;
 
 public:
 
