@@ -1,16 +1,12 @@
 #pragma once
-#include <Arduino.h>
-#include <FS.h>
-
-class WebServer;
+#include <WebServer.h>
 
 class ServeurWeb {
- public:
+public:
   ServeurWeb();
   void tick();
-
- private:
+  
+private:
   WebServer* m_webServer;
-  void afficherMessage();
-
+  void afficherRacine();
 };

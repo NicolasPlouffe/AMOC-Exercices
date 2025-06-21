@@ -1,21 +1,22 @@
 #include <Arduino.h>
 #include <WiFi.h>
-
 #include "config.h"
 #include "Program.h"
-
 #include "ServeurWeb.h"
-
-#define WIFI_SSID "iot_lab"
-#define WIFI_PASSWORD "engagelejeuquejelegagne"
 
 Program::Program(){
     this->connexionReseau();
+      Serial.println("Connextion affectee");
+
     this->m_serveurWeb = new ServeurWeb();
+      Serial.println("Serveur affectt dans ptrg");
 }
+
 void Program::loop(){
+//  Serial.println("loop");
     this->m_serveurWeb->tick();
 }
+
 void Program::connexionReseau() {
   // put your setup code here, to run once:
   const uint8_t nbEssaisMaximum = 30;
@@ -31,9 +32,12 @@ void Program::connexionReseau() {
   }
   Serial.println("");
 
-  if (WiFi.status() == WL_CONNECTED) {
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.println("\nÉchec de connexion WiFi!");
+    return;
+  }
+
     Serial.print("Connecté au réseau WiFi, adresse IP : ");
     Serial.println(WiFi.localIP());
-    Serial.println("");
-  }
+    Serial.println(""); 
 }

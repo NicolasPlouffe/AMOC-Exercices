@@ -1,23 +1,27 @@
 #include "ServeurWeb.h"
 #include <Arduino.h>
-#include <WebServer.h>
-#include <detail/RequestHandlersImpl.h>
-#include <LittleFS.h>
 
-ServeurWeb::ServeurWeb()
-{
-    this->m_webServer = new WebServer();
+ServeurWeb::ServeurWeb() {
+  this->m_webServer = new WebServer(80);
+  
+  // Route principale seulement
+  this->m_webServer->on("/", HTTP_GET, [this]() { 
+    this->afficherRacine(); 
+  });
+  
+  // Gestion des erreurs (optionnel mais recommandé)
+  this->m_webServer->onNotFound([this]() {
+    this->m_webServer->send(404, "text/plain", "Ressource non trouvée");
+  });
 
-    this->m_webServer->on("/", HTTPMethod::HTTP_GET,
-                          [this]()
-                          { this->afficherMessage(); });
-
-    this->m_webServer->begin();
+  this->m_webServer->begin();
 }
 
-void ServeurWeb::tick() { this->m_webServer->handleClient(); }
+void ServeurWeb::tick() { 
+  this->m_webServer->handleClient(); 
+}
 
-void ServeurWeb::afficherMessage()
-{
-    this->m_webServer->send(200, "text/plain", "Bonjour à partir de mon ESP32 !");
+void ServeurWeb::afficherRacine() {
+  // Envoi direct du message demandé
+  this->m_webServer->send(200, "text/plain", "Bonjour à partir de mon ESP32 !");
 }
