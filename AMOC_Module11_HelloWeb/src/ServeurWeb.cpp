@@ -23,5 +23,5 @@ void ServeurWeb::tick() {
 
 void ServeurWeb::afficherRacine() {
   // Envoi direct du message demandé
-  this->m_webServer->send(200, "text/plain", "Bonjour à partir de mon ESP32 !");
+  this->m_webServer->send(200, "text/plain", "Bonjour à partir de mon ESP32 ! Nicolas");
 }
