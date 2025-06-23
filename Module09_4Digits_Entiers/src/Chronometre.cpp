@@ -2,7 +2,7 @@
 
 Chronometre::Chronometre()
 {
-    this->compteur = 0;
+    this->compteur = 0 ;
     this->dernierEnregistrement = millis();
     dizaineHeure = 0;
     uniteHeure = 0;
@@ -85,11 +85,15 @@ int Chronometre::getCompteur() const
 }
 
 void Chronometre::setTemps() {
-    const unsigned long total = compteur;
+    unsigned long total = compteur;
 
-    const auto heures = total / 3600;
-    const auto minutes = (total % 3600) / 60; // Extraction complète
-    const auto secondes = total % 60;
+    if (compteur >= 86400) {
+        compteur = 0;
+        total = 0 ;
+    }
+    int heures = total / 3600;
+    int minutes = (total % 3600) / 60; // Extraction complète
+    int secondes = total % 60;
 
     setDizaineHeure(heures / 10);
     setUniteHeure(heures % 10);

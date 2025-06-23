@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- PFL : Code pour les fallbacks de Bootstrap trouvé ici : https://www.jeremyknight.me/posts/2021/2021-01-08-bootstrap-5-cdn-fallback/ -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+          onerror="this.onerror=null;this.href='css/bootstrap.min.css';this.removeAttribute('integrity');this.removeAttribute('crossorigin');"
+          integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Contrôleur DEL par WiFi</title>
+</head>
+
+<body>
+<main>
+    <div class="container col-xl-10">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-md-10 mx-auto col-lg-5">
+                <div class="p-4 p-md-5 border rounded-3 bg-light">
+                    <div class="mb-3">
+                        Contrôle de la DEL interne :
+                    </div>
+                    <div class="mb-3" id="statutDEL">
+                        <!-- État sera affiché ici -->
+                    </div>
+                    <div class="mb-3 form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="toggleButton">
+                        <label class="form-check-label" for="toggleButton">Contrôle de la DEL</label>
+                    </div>
+
+                    <hr class="my-4">
+                    <small class="text-muted">Site diffusé par votre ESP32.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    // Fallback pour Bootstrap
+    if (!window.bootstrap) {
+        var newScript = document.createElement("script");
+        newScript.setAttribute("src", "js/bootstrap.min.js");
+        document.getElementsByTagName("head")[0].appendChild(newScript);
+    }
+</script>
+
+<script>
+    // Fonctions pour gérer l'état de la DEL
+    async function chargerEtatInitial() {
+        try {
+            const reponse = await fetch('/actionneur');
+            if (!reponse.ok) throw new Error('Erreur réseau');
+
+            const etat = await reponse.json();
+            document.getElementById("toggleButton").checked = (etat.etat === "allume");
+            afficherStatutDEL(etat);
+        } catch (error) {
+            afficherMessage("Erreur: " + error.message);
+        }
+    }
+
+    async function basculerEtat() {
+        const nouvelEtat = document.getElementById("toggleButton").checked ? "allume" : "eteint";
+
+        try {
+            const reponse = await fetch('/actionneurs/1', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: 1, etat: nouvelEtat })
+            });
+
+            if (!reponse.ok) throw new Error('Erreur serveur');
+
+            const resultat = await reponse.json();
+            afficherStatutDEL(resultat);
+        } catch (error) {
+            afficherMessage("Erreur: " + error.message);
+            // Réinitialiser le toggle en cas d'erreur
+            document.getElementById("toggleButton").checked = !document.getElementById("toggleButton").checked;
+        }
+    }
+
+    function afficherMessage(message) {
+        document.getElementById("statutDEL").innerHTML = `<div class="alert alert-danger">${message}</div>`;
+    }
+
+    function afficherStatutDEL(statut) {
+        const etatTexte = (statut.etat === "allume")
+            ? "La DEL est allumée"
+            : "La DEL est éteinte";
+
+        document.getElementById("statutDEL").innerHTML = etatTexte;
+    }
+
+    // Initialisation
+    window.addEventListener("load", () => {
+        chargerEtatInitial();
+        document.getElementById("toggleButton")
+            .addEventListener("change", basculerEtat);
+    });
+</script>
+</body>
+</html>
