@@ -6,7 +6,7 @@ class Chronometre
 public:
     Chronometre();
     void Tick();
-    int getCompteur() const;
+    int getCompteur() ;
     void setTemps();
 
     void setDizaineHeure(int p_valeur);
@@ -23,19 +23,20 @@ public:
     int getDizaineSeconde() ;
     int getUniteSeconde() ;
 
+
+    uint8_t heures ;
+    uint8_t minutes ;
+
+    int dizaineHeure ;
+    int uniteHeure ;
+    int dizaineMinute ;
+    int uniteMinute ;
+    int dizaineSeconde ;
+    int uniteSeconde ;
+
 private:
     const unsigned long seconde = 1000;
     unsigned long compteur;
     unsigned long dernierEnregistrement;
-    uint8_t heures = 0;
-    uint8_t minutes = 0;
-
-    int dizaineHeure = 0;
-    int uniteHeure = 0;
-    int dizaineMinute = 0;
-    int uniteMinute = 0;
-    int dizaineSeconde = 0;
-    int uniteSeconde = 0;
-
 
 };

@@ -16,8 +16,6 @@ Chronometre chronometre = Chronometre();
 void Program::loop() {
     chronometre.Tick();
 
-
-
     m_affichage4Digits->afficher(
 
         m_affichage4Digits->segments[chronometre.getDizaineHeure()],

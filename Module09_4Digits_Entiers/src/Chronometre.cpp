@@ -6,8 +6,6 @@ Chronometre::Chronometre()
     this->dernierEnregistrement = millis();
     setTemps();
     Serial.println(compteur);
-
-
 }
 
 int Chronometre::getDizaineHeure()
@@ -82,16 +80,14 @@ void Chronometre::Tick()
     }
 }
 
-int Chronometre::getCompteur() const
+int Chronometre::getCompteur()
 {
-    return compteur;
+    return this->compteur;
 }
 
 void Chronometre::setTemps() {
-    unsigned long total = getCompteur(); // Récupère le compteur (ex: 86340)
-    Serial.print("retour get compteur: " + getCompteur());
-    Serial.print(total);
-    if (total >= 86400) total %= 86400; // Gestion du dépassement 24h
+
+    unsigned long total = this->compteur;
 
     int heures = total / 3600;
     Serial.print(heures);
