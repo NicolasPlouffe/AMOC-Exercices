@@ -19,14 +19,17 @@ void Program::loop() {
 
 
     m_affichage4Digits->afficher(
+
         m_affichage4Digits->segments[chronometre.getDizaineHeure()],
          m_affichage4Digits->segments[chronometre.getUniteHeure()] | 0x80,
          m_affichage4Digits->segments[chronometre.getDizaineMinute()],
          m_affichage4Digits->segments[chronometre.getUniteMinute()]
-    );
 
+         /*m_affichage4Digits->segments[(86340 / 3600) / 10],
+         m_affichage4Digits->segments[(86340 / 3600) % 10 ] | 0x80,
+         m_affichage4Digits->segments[((86340 % 3600)/60) / 10 ],
+         m_affichage4Digits->segments[((86340 % 3600)/60) % 10 ]*/
 
-    /*
-    m_affichage4Digits->AfficherEntier(chronometre.getCompteur());
-*/
+        );
+
 }

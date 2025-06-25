@@ -2,26 +2,23 @@
 
 Chronometre::Chronometre()
 {
-    this->compteur = 0 ;
+    this->compteur = 86340 ;
     this->dernierEnregistrement = millis();
-    dizaineHeure = 0;
-    uniteHeure = 0;
-    dizaineMinute = 0;
-    uniteMinute = 0;
-    dizaineSeconde = 0;
-    uniteSeconde = 0;
+    setTemps();
+    Serial.println(compteur);
+
+
 }
 
 int Chronometre::getDizaineHeure()
 {
-    return uniteHeure;
+    return dizaineHeure;
 }
 
 int Chronometre::getUniteHeure()
 {
     return uniteHeure;
 }
-
 
 int Chronometre::getDizaineMinute() {
     return dizaineMinute;
@@ -70,12 +67,18 @@ void Chronometre::setUniteSeconde(int u)
 void Chronometre::Tick()
 {
    unsigned long enregistrementCourrant = millis();
+    unsigned long tempsEcoulee = enregistrementCourrant - dernierEnregistrement;
 
-    if (enregistrementCourrant - dernierEnregistrement >= seconde)
+    if (tempsEcoulee >= 1000)
     {
-        compteur++;
-        dernierEnregistrement = enregistrementCourrant;
+        unsigned long  secondesEcoulees = tempsEcoulee/1000;
+        compteur += secondesEcoulees;
+        dernierEnregistrement += secondesEcoulees * 1000;
+
+        if (compteur >= 86400) compteur %= 86400;
+
         setTemps();
+
     }
 }
 
@@ -85,25 +88,32 @@ int Chronometre::getCompteur() const
 }
 
 void Chronometre::setTemps() {
-    unsigned long total = compteur;
+    unsigned long total = getCompteur(); // Récupère le compteur (ex: 86340)
+    Serial.print("retour get compteur: " + getCompteur());
+    Serial.print(total);
+    if (total >= 86400) total %= 86400; // Gestion du dépassement 24h
 
-    if (compteur >= 86400) {
-        compteur = 0;
-        total = 0 ;
-    }
     int heures = total / 3600;
-    int minutes = (total % 3600) / 60; // Extraction complète
+    Serial.print(heures);
+    int minutes = (total % 3600) / 60;
+    Serial.print(minutes);
     int secondes = total % 60;
+    Serial.print(secondes);
 
-    setDizaineHeure(heures / 10);
-    setUniteHeure(heures % 10);
-
-    setDizaineMinute( minutes / 10); // Correction cruciale
-    setUniteMinute(minutes % 10);
-
-    setDizaineSeconde(secondes / 10);
-    setUniteSeconde(secondes % 10);
-
+    // Décomposition des chiffres
+    dizaineHeure = heures / 10;
+    Serial.print(dizaineHeure);
+    uniteHeure = heures % 10;
+    Serial.print(uniteHeure);
+    dizaineMinute = minutes / 10;
+    Serial.print(dizaineMinute);
+    uniteMinute = minutes % 10;
+    Serial.print(uniteMinute);
+    dizaineSeconde = secondes / 10;
+    Serial.print(dizaineSeconde);
+    uniteSeconde = secondes % 10;
+    Serial.print(uniteSeconde);
 }
+
 
 

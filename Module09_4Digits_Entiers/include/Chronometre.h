@@ -25,7 +25,7 @@ public:
 
 private:
     const unsigned long seconde = 1000;
-    int compteur;
+    unsigned long compteur;
     unsigned long dernierEnregistrement;
     uint8_t heures = 0;
     uint8_t minutes = 0;
