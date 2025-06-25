@@ -11,7 +11,7 @@ class ConnectionReseau {
 
     private:
 
-bool estConnectee = false;
+    bool connected = false;
 };
 
 

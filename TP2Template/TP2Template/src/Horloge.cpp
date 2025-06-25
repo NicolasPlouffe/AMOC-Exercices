@@ -6,7 +6,7 @@
 
 Horloge::Horloge()
 {
-    memset(&uint8_t, 0 , sizeof(uint8_t));
+    memset(&timeInfo, 0 , sizeof(uint8_t));
 }
 
 void Horloge::MAJ()
