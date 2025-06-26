@@ -2,7 +2,7 @@
 
 Chronometre::Chronometre()
 {
-    this->compteur = 86340 ;
+    this->compteur = 81600 ;
     this->dernierEnregistrement = millis();
     setTemps();
     Serial.println(compteur);

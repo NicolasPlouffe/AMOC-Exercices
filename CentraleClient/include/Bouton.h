@@ -1,9 +1,4 @@
 #pragma once
-
-// Bouton.h
-#ifndef BOUTON_H
-#define BOUTON_H
-
 #include <Arduino.h>
 #include "Action.h"
 
@@ -27,4 +22,4 @@ public:
     bool EstAppuye() const;
 };
 
-#endif
+

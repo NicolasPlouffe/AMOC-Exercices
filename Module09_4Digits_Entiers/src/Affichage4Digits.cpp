@@ -1,5 +1,5 @@
 #include "Affichage4Digits.h"
-const uint8_t Affichage4Digits::segments[18] = {
+const uint8_t Affichage4Digits::segments[21] = {
     0b00111111, // 0 → Segments A,B,C,D,E,F (0x3F)
     0b00000110, // 1 → Segments B,C (0x06)
     0b01011011, // 2 → Segments A,B,G,E,D (0x5B)
@@ -21,8 +21,14 @@ const uint8_t Affichage4Digits::segments[18] = {
 
     // Caractères spéciaux
     0b01110011, // P → Segments A,B,E,F,G (0x73)
-    0b00111110  // U → Segments B,C,D,E,F (0x3E)
+    0b00111110, // U → Segments B,C,D,E,F (0x3E)
+
+    // Caratères pour message Erreur
+    0b00001000, // segment d allumé
+    0b01000000, // segment g allumé
+    0b11111110, // segment a éteint
 };
+
 Affichage4Digits::Affichage4Digits(Affichage4DigitsProxy* p_proxy){
     this->m_proxy = p_proxy;
 }

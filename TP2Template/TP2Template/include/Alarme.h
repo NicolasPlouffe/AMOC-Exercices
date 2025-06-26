@@ -1,16 +1,15 @@
-//
-// Created by nico on 6/25/25.
-//
+#pragma once
 
-#ifndef ALARME_H
-#define ALARME_H
-
-
+#include "Heure.h"
 
 class Alarme {
 
+    public:
+    Alarme();
+
+private:
+    Heure _heure;
+    bool activee;
+    // chansson
 };
 
-
-
-#endif //ALARME_H

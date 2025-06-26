@@ -1,16 +1,17 @@
 #include <Arduino.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
 
 class API
 {
 private:
-    String url;
+    String m_url;
 
 public:
 
+    API(String p_url);
 
-    API();
-
-    void lireStatut();
-    void changerStatut();
- 
+    String getUrl() const;
+    String lireStatut();
+    bool changerStatut(const String& nouvelEtat);
 };
