@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "8WtBXo6BRJWO2ek2GawaOOQDS03beoClJSBpd+FExQQ=",
+  "Source": "CoeurReacteurCSharp",
+  "BasePath": "_content/CoeurReacteurCSharp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CoeurReacteurCSharp/wwwroot",
+      "Source": "CoeurReacteurCSharp",
+      "ContentRoot": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/",
+      "BasePath": "_content/CoeurReacteurCSharp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/css/bootstrap.min.css",
+      "SourceId": "CoeurReacteurCSharp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/",
+      "BasePath": "_content/CoeurReacteurCSharp",
+      "RelativePath": "css/bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "81dme5qsp1",
+      "Integrity": "hHKA3d/HttC8OW3Sl093W8DoZudhHJDj++kZYo6MLzA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/bootstrap.min.css"
+    },
+    {
+      "Identity": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/js/bootstrap.min.js",
+      "SourceId": "CoeurReacteurCSharp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/",
+      "BasePath": "_content/CoeurReacteurCSharp",
+      "RelativePath": "js/bootstrap.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zd8w7qmqqz",
+      "Integrity": "d+FygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1+c5vKk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/bootstrap.min.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/bootstrap.min.81dme5qsp1.css",
+      "AssetFile": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/css/bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "155631"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hHKA3d/HttC8OW3Sl093W8DoZudhHJDj++kZYo6MLzA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Jan 2025 23:48:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "81dme5qsp1"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hHKA3d/HttC8OW3Sl093W8DoZudhHJDj++kZYo6MLzA="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap.min.css",
+      "AssetFile": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/css/bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "155631"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hHKA3d/HttC8OW3Sl093W8DoZudhHJDj++kZYo6MLzA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Jan 2025 23:48:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hHKA3d/HttC8OW3Sl093W8DoZudhHJDj++kZYo6MLzA="
+        }
+      ]
+    },
+    {
+      "Route": "js/bootstrap.min.js",
+      "AssetFile": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/js/bootstrap.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60091"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"d+FygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1+c5vKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Jan 2025 23:48:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-d+FygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1+c5vKk="
+        }
+      ]
+    },
+    {
+      "Route": "js/bootstrap.min.zd8w7qmqqz.js",
+      "AssetFile": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/wwwroot/js/bootstrap.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60091"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"d+FygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1+c5vKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Jan 2025 23:48:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zd8w7qmqqz"
+        },
+        {
+          "Name": "label",
+          "Value": "js/bootstrap.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-d+FygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1+c5vKk="
+        }
+      ]
+    }
+  ]
+}

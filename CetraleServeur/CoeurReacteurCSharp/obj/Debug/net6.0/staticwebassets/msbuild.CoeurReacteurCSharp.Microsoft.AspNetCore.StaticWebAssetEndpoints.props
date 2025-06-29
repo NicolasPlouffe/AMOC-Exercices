@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/CoeurReacteurCSharp/css/bootstrap.min.81dme5qsp1.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\bootstrap.min.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"81dme5qsp1"},{"Name":"integrity","Value":"sha256-hHKA3d/HttC8OW3Sl093W8DoZudhHJDj\u002B\u002BkZYo6MLzA="},{"Name":"label","Value":"_content/CoeurReacteurCSharp/css/bootstrap.min.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"155631"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022hHKA3d/HttC8OW3Sl093W8DoZudhHJDj\u002B\u002BkZYo6MLzA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 Jan 2025 23:48:19 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CoeurReacteurCSharp/css/bootstrap.min.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\bootstrap.min.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hHKA3d/HttC8OW3Sl093W8DoZudhHJDj\u002B\u002BkZYo6MLzA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"155631"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022hHKA3d/HttC8OW3Sl093W8DoZudhHJDj\u002B\u002BkZYo6MLzA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 Jan 2025 23:48:19 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CoeurReacteurCSharp/js/bootstrap.min.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.min.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-d\u002BFygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1\u002Bc5vKk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"60091"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022d\u002BFygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1\u002Bc5vKk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 Jan 2025 23:48:19 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CoeurReacteurCSharp/js/bootstrap.min.zd8w7qmqqz.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.min.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zd8w7qmqqz"},{"Name":"integrity","Value":"sha256-d\u002BFygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1\u002Bc5vKk="},{"Name":"label","Value":"_content/CoeurReacteurCSharp/js/bootstrap.min.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"60091"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022d\u002BFygkWgwt59CFkWPuCB4RE6p1/WiUYCy16w1\u002Bc5vKk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 Jan 2025 23:48:19 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>
