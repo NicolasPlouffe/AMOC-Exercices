@@ -25,6 +25,10 @@ uint8_t dernierEtatBouton = HIGH;
 uint8_t dernierEtatStableBouton = HIGH;
 const uint8_t delaiMinPression = 25;
 
+// Minuterie :
+unsigned long dernierTemps = 0;
+const unsigned long intervalle = 2000;
+
 void setup()
 {
   Serial.begin(115200);
@@ -40,17 +44,21 @@ void setup()
 
 void loop()
 {
-  delay(2000);
-  String etat = clientWeb->GetEtat();
-  if (etat == "actif")
+  unsigned long temps = millis();
+  if (temps - dernierTemps >= intervalle)
   {
-    delVerte->eteindre();
-    delRouge->allumer();
-  }
-  else if (etat == "repos")
-  {
-    delVerte->allumer();
-    delRouge->eteindre();
+    dernierTemps = temps;
+    String etat = clientWeb->GetEtat();
+    if (etat == "actif")
+    {
+      delVerte->eteindre();
+      delRouge->allumer();
+    }
+    else if (etat == "repos")
+    {
+      delVerte->allumer();
+      delRouge->eteindre();
+    }
   }
   LectureBouton();
 }
