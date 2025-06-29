@@ -1,3 +1,4 @@
+#pragma once
 #include <HTTPClient.h>
 #include <Arduino.h>
 #include <ArduinoJson.h>

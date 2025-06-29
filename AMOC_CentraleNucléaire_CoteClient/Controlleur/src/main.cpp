@@ -7,6 +7,7 @@
 #define WIFI_SSID "iot_lab"
 #define WIFI_PASSWORD "engagelejeuquejelegagne"
 #define NB_ESSAIS_MAXIMUM 30
+#include "CommandInterpreter.h"
 
 void ConnectionWifi();
 void AfficherLAdresseIP();
@@ -29,6 +30,8 @@ const uint8_t delaiMinPression = 25;
 unsigned long dernierTemps = 0;
 const unsigned long intervalle = 2000;
 
+CommandInterpreter * commandeInterpreter;
+
 void setup()
 {
   Serial.begin(115200);
@@ -39,7 +42,8 @@ void setup()
   delRouge = new DEL(DEL_ROUGE_PIN);
   delVerte = new DEL(DEL_VERTE_PIN);
   pinMode(BOUTON_PIN, INPUT);
-  clientWeb->Put("actif");
+  commandeInterpreter = new CommandInterpreter(Serial, clientWeb);
+  commandeInterpreter->begin();
 }
 
 void loop()
@@ -61,6 +65,7 @@ void loop()
     }
   }
   LectureBouton();
+  commandeInterpreter->tick();
 }
 
 void ConnectionWifi()
