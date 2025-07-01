@@ -1,15 +1,16 @@
 #pragma once
-
+#include <Arduino.h>
 #include "Heure.h"
-
-class Alarme {
-
+class Alarme{
+    private:
+        Heure * heureAlarme;
+        bool estActive;
     public:
-    Alarme();
-
-private:
-    Heure _heure;
-    bool activee;
-    // chansson
+        Alarme(Heure * heureAlarme);
+        bool GetEtat();
+        Heure * GetHeure();
+        void SetHeure(Heure * heure);
+        void Activer();
+        void Desactiver();
+        void Sonner();
 };
-

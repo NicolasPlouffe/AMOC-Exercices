@@ -1,0 +1,22 @@
+{
+    "authors": {
+        "name": "Sergey Pastor",
+        "url": "https://os.mbed.com/users/Sergunb/"
+    },
+    "build": {
+        "builder": "MbedLibBuilder"
+    },
+    "description": "WebServer + 3d printer",
+    "examples": [
+        "https://os.mbed.com/users/Sergunb/code/Nucleo/"
+    ],
+    "frameworks": "mbed",
+    "keywords": [],
+    "name": "main",
+    "platforms": "*",
+    "repository": {
+        "type": "hg",
+        "url": "https://os.mbed.com/users/Sergunb/code/main/"
+    },
+    "version": "0.0.0+sha.21b85706ec2f"
+}

@@ -68,7 +68,4 @@
 /home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/obj/Debug/net6.0/CoeurReacteurCSharp.pdb
 /home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/obj/Debug/net6.0/CoeurReacteurCSharp.genruntimeconfig.cache
 /home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/obj/Debug/net6.0/ref/CoeurReacteurCSharp.dll
-/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/bin/Debug/net6.0/CoeurReacteurCSharp.staticwebassets.endpoints.json
-/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/obj/Debug/net6.0/staticwebassets.build.endpoints.json
-/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/obj/Debug/net6.0/staticwebassets/msbuild.CoeurReacteurCSharp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/obj/Debug/net6.0/CoeurRea.5365E749.Up2Date
+/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/obj/Debug/net6.0/CoeurReacteurCSharp.csproj.CopyComplete

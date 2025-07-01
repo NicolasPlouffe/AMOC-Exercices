@@ -4,24 +4,34 @@
 #include <chrono>
 #include <cstring>
 
-Horloge::Horloge()
+Horloge::Horloge() : m_heureCourrante(0,0)
 {
-    memset(&timeInfo, 0 , sizeof(uint8_t));
+    memset(&timeInfo, 0 , sizeof(timeInfo));
 }
 
 void Horloge::MAJ()
 {
-    getLocalTime(&timeInfo);
+    if (getLocalTime(&timeInfo))
+    {
+        m_heureCourrante.setHeure(timeInfo.tm_hour);
+        m_heureCourrante.setMinutes(timeInfo.tm_min);
+    }
 }
+
+Heure Horloge::getHeureCourrante() const
+{
+    return m_heureCourrante;
+}
+
 
 uint8_t Horloge::getHeures() const
 {
-    return timeInfo.tm_hour;
+    return getHeureCourrante().getHeure();
 }
 
 uint8_t Horloge::getMinutes() const
 {
-    return timeInfo.tm_min;
+    return getHeureCourrante().getMinutes();
 }
 
 uint8_t Horloge::getDizaineHeures() const
@@ -43,8 +53,3 @@ uint8_t Horloge::getUniteMinutes() const
 {
     return getMinutes() % 10;
 }
-
-
-
-
-

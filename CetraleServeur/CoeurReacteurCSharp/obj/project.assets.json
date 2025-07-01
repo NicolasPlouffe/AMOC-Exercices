@@ -224,7 +224,7 @@
     ]
   },
   "packageFolders": {
-    "/home/nico/.nuget/packages/": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -232,11 +232,11 @@
       "projectUniqueName": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/CoeurReacteurCSharp.csproj",
       "projectName": "CoeurReacteurCSharp",
       "projectPath": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/CoeurReacteurCSharp.csproj",
-      "packagesPath": "/home/nico/.nuget/packages/",
+      "packagesPath": "/root/.nuget/packages/",
       "outputPath": "/home/nico/Documents/Dev/AEC/AMOC/AMOC-Exercices/CetraleServeur/CoeurReacteurCSharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/nico/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -254,13 +254,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net6.0": {
@@ -284,15 +278,7 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.36, 6.0.36]"
-          },
-          {
             "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[6.0.36, 6.0.36]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
             "version": "[6.0.36, 6.0.36]"
           }
         ],
@@ -304,20 +290,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/nico/.dotnet/sdk/9.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Swashbuckle.AspNetCore.SwaggerUI' 6.2.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-qrmm-w75w-3wpx",
-      "libraryId": "Swashbuckle.AspNetCore.SwaggerUI",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

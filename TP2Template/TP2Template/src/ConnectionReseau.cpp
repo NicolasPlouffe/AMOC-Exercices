@@ -1,5 +1,4 @@
 #include "../include/ConnectionReseau.h"
-#include "config.h"
 
 ConnectionReseau::ConnectionReseau(){
 
@@ -31,7 +30,8 @@ ConnectionReseau::ConnectionReseau(){
     setenv("TZ", TIMEZONECANADAEST, 1 ); // Necessaire pour ajuster l'heure et tenir compte heure ete utilise dans define
     tzset();
     Serial.println("Synchronisation de l'heure ... ");
-}
+    }
+
     bool ConnectionReseau::estConnecte() const {
         return connected;
     }

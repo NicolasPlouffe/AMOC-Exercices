@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoeurReacteurCSharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64e787cd9b8da0e2d9f8175ac6545655c6a7d684")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38901ce8cc80d2ec7680adfbbecb10400ea68e6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoeurReacteurCSharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoeurReacteurCSharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

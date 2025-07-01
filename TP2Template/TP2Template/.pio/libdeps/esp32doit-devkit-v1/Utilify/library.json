@@ -1,0 +1,27 @@
+{
+    "name": "Utilify",
+    "version": "1.0.1",
+    "description": "Utilify provides a collection of versatile utilities designed for embedded systems, simplifying string manipulation, device management, and general-purpose tasks for Arduino and ESP32 platforms.",
+    "keywords": ["string", "utilities", "embedded", "platformio", "arduino", "esp32"],
+    "authors": [
+      {
+        "name": "Pierre-François Léon",
+        "email": "pierrefrancois.leon@gmail.com",
+        "maintainer": true
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/PiFou86/Utilify.git"
+    },
+    "license": "MIT",
+    "frameworks": ["arduino"],
+    "platforms": [
+      "atmelavr",
+      "espressif32",
+      "renesas-ra"
+    ],
+    "dependencies": [ 
+    ]
+}
+  
