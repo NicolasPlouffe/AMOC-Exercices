@@ -135,4 +135,5 @@
  /home/nico/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include/esp_spi_flash_counters.h \
  /home/nico/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32/spiram.h \
  /home/nico/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
- /home/nico/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h
+ /home/nico/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
+ include/GestionnaireDAlarmes.h include/Alarme.h

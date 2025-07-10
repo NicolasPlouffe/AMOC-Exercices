@@ -196,4 +196,5 @@
  /home/nico/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiUdp.h \
  /home/nico/.platformio/packages/framework-arduinoespressif32/cores/esp32/Udp.h \
  /home/nico/.platformio/packages/framework-arduinoespressif32/cores/esp32/cbuf.h \
- include/Horloge.h include/Heure.h
+ include/Horloge.h include/Heure.h include/GestionnaireDAlarmes.h \
+ include/Alarme.h

@@ -196,5 +196,6 @@
  /home/nico/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiUdp.h \
  /home/nico/.platformio/packages/framework-arduinoespressif32/cores/esp32/Udp.h \
  /home/nico/.platformio/packages/framework-arduinoespressif32/cores/esp32/cbuf.h \
- include/Horloge.h include/Heure.h include/Affichage4DigitsProxyTM1637.h \
+ include/Horloge.h include/Heure.h include/GestionnaireDAlarmes.h \
+ include/Alarme.h include/Affichage4DigitsProxyTM1637.h \
  .pio/libdeps/esp32doit-devkit-v1/TM1637/TM1637Display.h

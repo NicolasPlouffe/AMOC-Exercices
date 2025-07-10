@@ -3,6 +3,8 @@
 #include "Horloge.h"
 #include "Alarme.h"
 
+class Horloge;
+
 class GestionnaireDAlarmes
 {
 private:
