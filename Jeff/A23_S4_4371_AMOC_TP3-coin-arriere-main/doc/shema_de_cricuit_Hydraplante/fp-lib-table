@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "um")(type "KiCad")(uri "/home/jeff/Downloads/esp32s3-main/kicad/footprints/um.pretty")(options "")(descr ""))
+)

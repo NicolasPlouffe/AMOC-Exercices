@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name "um")(type "KiCad")(uri "${KIPRJMOD}/um.kicad_sym")(options "")(descr ""))
+  (lib (name "relayModule")(type "KiCad")(uri "/home/jeff/Downloads/esp32s3-main/kicad/symbols/relayModule.kicad_sym")(options "")(descr ""))
+  (lib (name "projet")(type "KiCad")(uri "${KIPRJMOD}/projet.kicad_sym")(options "")(descr ""))
+)

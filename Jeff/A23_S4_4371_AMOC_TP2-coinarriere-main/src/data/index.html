@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <meta name=description content="Contrôleur Web du compacteur">
+    <meta name=author content="Bryen Savar et Jeff Hebert">
+    <script defer src="js/controleur.js"></script>
+
+    <title>Contrôleur Web du compacteur</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Contrôleur Web du compacteur</h1>
+            <div>
+                <p>Le compacteur est actuellement <span id="etat">Déactiver</span>.</p>
+                <button id="boutonEtat">Démarrer</button>
+            </div>
+            <div>
+                <p>Le compacteur a compacté <span id="nbCanettes">0</span> cannettes.</p>
+                <button id="boutonReinitialiser">Réinitialiser</button>
+            </div>
+            <div>
+                <p>Le montant versé est de <span id="montantVerse">0</span>$.</p>
+            </div>
+            <div>
+                <label for="nouvelEmplacement">L'emplacement du compacteur est <span id="emplacement">Inconnu</span>.</label><br>
+                <input type="text" id="nouvelEmplacement" placeholder="Nouvel emplacement" required>
+                <button id="boutonEmplacement">Modifier</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
